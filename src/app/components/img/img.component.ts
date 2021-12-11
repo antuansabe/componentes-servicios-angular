@@ -12,7 +12,7 @@ export class ImgComponent implements OnInit {
   imageDefault = './assets/default.png';
 
   constructor() { }
-
+  console.log("constructor", "imgValue =>", this.img);
   ngOnInit(): void {
   }
 
