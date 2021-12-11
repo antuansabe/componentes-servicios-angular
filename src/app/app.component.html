@@ -1,7 +1,9 @@
 <!--Los componentes pueden ser usados como un tag html-->
 <p> <input type="text" [(ngModel)]="imgParent"  >    </p>
-<app-img (loaded)="onLoaded($event)" [img]="imgParent"> </app-img>
+<button (click)="toggleImg()">Toggle Img </button>
+<p> {{ showImg  }}</p>
+<app-img *ngIf="showImg" (loaded)="onLoaded($event)" [img]="imgParent"> </app-img>
 
-
+<hr/>
 <app-product [product]="product" *ngFor="let product of products" > </app-product>
 
