@@ -1,4 +1,7 @@
-# Resumen del curso Componentes y Servicios
+# Este proyecto es parte del curso de Componentes y Servicios de Angular
+
+
+## Esta construido con fines de aprendizaje
 
 ## Artefactos nucleo de Angular
 
