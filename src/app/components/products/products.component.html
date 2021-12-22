@@ -6,7 +6,7 @@
 </p>
 
 
-<button (click)="toggleProductDetail()">click</button>
+<button (click)="createNewProduct()">Create</button>
 <div class= "products--grid">
   <app-product
   [product]="product"
@@ -17,9 +17,18 @@
   </app-product>
 </div>
 <div class="products-detail" [class.active]="showProductDetail" >
-  <div>
+  <div *ngIf="productChosen">
     <button (click)="toggleProductDetail()">Close</button>
-    Contenido
+    <h1>{{ productChosen.title }}</h1>
+    <p>{{ productChosen.description }}</p>
+    <swiper
+      [slidesPerView]="1"
+    >
+      <ng-template swiperSlide *ngFor="let img of productChosen.images">
+        <img [src]="img" [alt]="productChosen.title">
+      </ng-template>
+    </swiper>
+    <p>{{ productChosen.description }}</p>
   </div>
 
 </div>

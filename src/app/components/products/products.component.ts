@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../models/product.model';
+import { Product, CreateProductDTO } from '../../models/product.model';
 import { StoreService }  from '../../services/store.service';
 import { ProductsService  } from '../../services/products.service';
 @Component({
@@ -13,6 +13,17 @@ export class ProductsComponent implements OnInit {
   total = 0 ;
   products:  Product[] = [ ];
   showProductDetail = false;
+  productChosen: Product = {
+    id: '',
+    price: 0,
+    images: [],
+    title: '',
+    category: {
+      id: '',
+      name: '',
+    },
+    description: ''
+  };
 
   constructor(
     private  storeService: StoreService,
@@ -40,8 +51,23 @@ export class ProductsComponent implements OnInit {
   onShowDetail( id: string ){
     this.productsService.getProduct(id)
       .subscribe( data =>{
-        console.log('product', data);
+        this.toggleProductDetail();
+        this.productChosen = data;
       } )
+  }
+
+  createNewProduct() {
+    const product: CreateProductDTO = {
+      title: 'Nuevo producto',
+      description: 'bla bla bla',
+      images: [''],
+      price: 1000,
+      categoryId: 2,
+    }
+    this.productsService.create(product)
+      .subscribe( data =>  {
+        console.log('created',data);
+    });
   }
 
 }
