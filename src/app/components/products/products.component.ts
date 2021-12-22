@@ -60,13 +60,13 @@ export class ProductsComponent implements OnInit {
     const product: CreateProductDTO = {
       title: 'Nuevo producto',
       description: 'bla bla bla',
-      images: [''],
+      images: [`https://placeimg.com/640/480/any?random=${Math.random()}`],
       price: 1000,
       categoryId: 2,
     }
     this.productsService.create(product)
       .subscribe( data =>  {
-        console.log('created',data);
+        this.products.unshift(data);
     });
   }
 
