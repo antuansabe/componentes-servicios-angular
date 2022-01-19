@@ -12,6 +12,14 @@ import { ReversePipe } from './pipes/reverse.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
 import { SwiperModule } from 'swiper/angular';
 import { TimeInterceptor } from './interceptors/time.interceptor';
+import { HomeComponent } from './pages/home/home.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { CategoryComponent } from './pages/category/category.component';
+import { MycartComponent } from './pages/mycart/mycart.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { RecoveryComponent } from './pages/recovery/recovery.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +28,15 @@ import { TimeInterceptor } from './interceptors/time.interceptor';
     ProductsComponent,
     NavComponent,
     ReversePipe,
-    HighlightDirective
+    HighlightDirective,
+    HomeComponent,
+    NotFoundComponent,
+    CategoryComponent,
+    MycartComponent,
+    LoginComponent,
+    RegisterComponent,
+    RecoveryComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
