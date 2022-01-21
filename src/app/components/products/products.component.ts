@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Product, CreateProductDTO, UpdateProductDTO } from '../../models/product.model';
 import { StoreService }  from '../../services/store.service';
 import { ProductsService  } from '../../services/products.service';
@@ -7,11 +7,11 @@ import { ProductsService  } from '../../services/products.service';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent {
 
   myShoppingCart: Product [] = [];
   total = 0 ;
-  products:  Product[] = [ ];
+  @Input() products:  Product[] = [ ];
   showProductDetail = false;
   productChosen: Product = {
     id: '',
@@ -32,12 +32,7 @@ export class ProductsComponent implements OnInit {
     this.myShoppingCart = this.storeService.getShoppingCart();
   }
 
-  ngOnInit(): void {
-    this.productsService.getAllProducts()
-    .subscribe(data => {
-      this.products = data;
-    });
-  }
+
 
   onAddShoppingCart(product: Product) {
     this.storeService.addProduct(product);
@@ -93,7 +88,6 @@ export class ProductsComponent implements OnInit {
           this.showProductDetail = false;
         });
     }
-
 
 
 }
