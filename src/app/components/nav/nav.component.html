@@ -32,11 +32,10 @@
         <img src="./assets/svg/logo_yard_sale.svg" alt="logo">
       </a>
       <ul>
-        <li><a href="">All</a></li>
+        <li><a routerLinkActive="active" routerLink="home"> Home</a></li>
         <li *ngFor="let item of categories" >
-          <a [routerLink]="['/category', item.id]">{{ item.name }}</a>
+          <a routerLinkActive="active" [routerLink]="['/category', item.id]">{{ item.name }}</a>
         </li>
-        <li><a href="">Electronics</a></li>
       </ul>
     </nav>
     <div class="info">
