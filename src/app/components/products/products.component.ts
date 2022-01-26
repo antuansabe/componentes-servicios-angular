@@ -11,6 +11,12 @@ export class ProductsComponent {
 
   myShoppingCart: Product [] = [];
   total = 0 ;
+  @Input()
+  set productId(id: string | null ){
+    if (id) {
+      this.onShowDetail(id);
+    }
+  }
   @Input() products:  Product[] = [ ];
   showProductDetail = false;
   productChosen: Product = {
@@ -44,6 +50,10 @@ export class ProductsComponent {
   }
 
   onShowDetail( id: string ){
+    if(!this.showProductDetail) {
+      this.showProductDetail = true;
+    }
+
     this.productsService.getProduct(id)
       .subscribe( data =>{
         this.toggleProductDetail();
