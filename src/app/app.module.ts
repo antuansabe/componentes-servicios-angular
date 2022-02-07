@@ -21,6 +21,7 @@ import { RegisterComponent } from './website/pages/register/register.component';
 import { RecoveryComponent } from './website/pages/recovery/recovery.component';
 import { ProfileComponent } from './website/pages/profile/profile.component';
 import { PagesDetailComponent } from './pages-detail/pages-detail.component';
+import { LayoutComponent } from './website/components/layout/layout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { PagesDetailComponent } from './pages-detail/pages-detail.component';
     RegisterComponent,
     RecoveryComponent,
     ProfileComponent,
-    PagesDetailComponent
+    PagesDetailComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
