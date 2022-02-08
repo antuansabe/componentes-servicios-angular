@@ -1,4 +1,4 @@
-import { ReversePipe } from './reverse.pipe';
+import { ReversePipe } from '../../shared/pipes/reverse.pipe';
 
 describe('ReversePipe', () => {
   it('create an instance', () => {
